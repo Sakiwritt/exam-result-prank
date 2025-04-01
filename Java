@@ -1,0 +1,21 @@
+document.getElementById("examForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var name = document.getElementById("name").value;
+    var studentId = document.getElementById("studentId").value;
+
+    if (name && studentId) {
+        // Display the fake result
+        document.getElementById("resultName").innerText = name;
+        document.getElementById("examResult").innerText = "Passed with 100% Score!";
+        
+        // Hide the form and show the result
+        document.getElementById("examForm").classList.add("hidden");
+        document.getElementById("result").classList.remove("hidden");
+
+        // Show the prank message after 3 seconds
+        setTimeout(function() {
+            document.getElementById("prankMessage").classList.remove("hidden");
+        }, 3000);
+    }
+});
